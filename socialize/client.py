@@ -93,17 +93,5 @@ class Management(ObjectBase,CollectionBase):
         
         resp= self._post(endpoint= 'smart_alert',
                 payload=payload)
-        return SmartAlert( resp )
-
-if __name__ == '__main__':
-    m  = Management( 'a020d83a-e88c-49ed-afa5-54ab9567308f' ,'489409c1-d4f1-41d8-a6a8-337b5c53edf6' )
-    #resp = m.send_smart_alert( 'hello test sending notification from management sdk yet', 421945 ) 
-    resp = m.get_smart_alerts()
-    #resp = m.get_smart_alert_by_id(1060)
-    #print resp
-
-    print resp
-
-
-
-
+        
+        return resp

@@ -23,16 +23,38 @@ Management API:
     /v1/smart_alert/<id>
         - GET smart_alert by id
     
-    Example
-    -------
+Example:
+    
     from socialize_management_sdk import client
     m = client.Management('<management-consumer-key>', 'management-consumer-secret')
 
     
     # to send smart alert 
     resp = m.post_smart_alert( 'hello test sending notification from management sdk yet', <application-id> ) 
-    # to get all smart alert
+    # response object is a dictionary of current status
+    print resp
+    {'android': {
+        'under_quota': True, 
+        'will_cause_quota_overflow': False
+        },
+    'ios': {
+        'under_quota': True,
+        'will_cause_quota_overflow': False},
+        'smart_alert_id': 1597
+        }
+
+    # to get all history smart alert objects
     resp = m.get_smart_alerts()
+    # return an objects of of smart alert
+
+        users             
+        created           
+        subscription_type 
+        id                
+        meta              
+        device_tokens     
+        message           
+
     # to get smart alert by id 
     resp = m.get_smart_alert_by_id(<smart_alert_id>)
-                        
+    # return single objects of smart alert                    
