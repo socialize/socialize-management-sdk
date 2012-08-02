@@ -45,7 +45,7 @@ Example:
 
     # to get all history smart alert objects
     resp = m.get_smart_alerts()
-    # return an objects of of smart alert
+    # return an object list of of smart alert
 
         users             
         created           
